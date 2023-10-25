@@ -36,7 +36,7 @@ const initGame = () => {
   for (let i = cuerpoSnake.length - 1; i > 0; i--) {
     cuerpoSnake[i] = cuerpoSnake[i - 1];
   }
-  // Comprueba si la cabeza de la serpiente coincide con la comida antes de actualizar el cuerpo.
+  //Comprueba si la cabeza de la serpiente coincide con la comida antes de actualizar el cuerpo.
   if (snakeX === comidaX && snakeY === comidaY) {
     cambiarPosicionComida();
     cuerpoSnake.push([comidaX, comidaY]);
