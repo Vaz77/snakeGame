@@ -60,3 +60,16 @@ body {
 .tablero .cuerpoSerpiente {
   background-color: greenyellow;
 }
+
+.mensaje {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 0, 208, 0.284);
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+}

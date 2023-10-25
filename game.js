@@ -22,7 +22,32 @@ const cambiarPosicionComida = () => {
 
 const handleGameOver = () => {
   clearInterval(setIntervalId);
-  alert("Has perdido!");
+  const mensajeGameOver = document.getElementById("mensaje");
+  mensajeGameOver.style.display = "block";
+  const puntuacionFinal = document.getElementById("puntuacionFinal");
+  puntuacionFinal.innerHTML = `Tu puntuación: ${puntuacion}`;
+
+  // Agrega un event listener para el botón de reinicio
+  const reiniciarBtn = document.getElementById("reiniciarBtn");
+  reiniciarBtn.addEventListener("click", reiniciarPartida);
+};
+
+const reiniciarPartida = () => {
+  // Restablece todas las variables del juego y oculta el mensaje de Game Over
+  gameOver = false;
+  puntuacion = 0;
+  puntuacionElemento.innerHTML = "Puntuación: 0";
+  const mensajeGameOver = document.getElementById("mensaje");
+  mensajeGameOver.style.display = "none";
+  cambiarPosicionComida();
+  cuerpoSnake = [];
+  velocidadX = 0;
+  velocidadY = 0;
+  snakeX = 5;
+  snakeY = 10;
+
+  // Comienza un nuevo juego
+  setIntervalId = setInterval(initGame, 125);
 };
 
 const cambioDireccion = (e) => {
