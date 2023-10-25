@@ -51,7 +51,12 @@ body {
 .tablero .comida {
   background-color: red;
 }
-
+.tablero .cabeza {
+  background-color: green;
+  background-size: cover;
+  border-radius: 10px;
+  height: 1.6em;
+}
 .tablero .cuerpoSerpiente {
   background-color: greenyellow;
 }

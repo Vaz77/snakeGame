@@ -35,19 +35,20 @@ const cambioDireccion = (e) => {
     velocidadX = 1;
     velocidadY = 0;
   }
-  initGame();
 };
 
 const initGame = () => {
   if (gameOver) return handleGameOver();
   let htmlMarkup = `<div class="comida" style="grid-area: ${comidaY} / ${comidaX}"></div>`;
-  for (let i = cuerpoSnake.length - 1; i > 0; i--) {
-    cuerpoSnake[i] = cuerpoSnake[i - 1];
-  }
   //Comprueba si la cabeza de la serpiente coincide con la comida antes de actualizar el cuerpo.
   if (snakeX === comidaX && snakeY === comidaY) {
     cambiarPosicionComida();
     cuerpoSnake.push([comidaX, comidaY]);
+  }
+  if (cuerpoSnake.length > 0) {
+    for (let i = cuerpoSnake.length - 1; i > 0; i--) {
+      cuerpoSnake[i] = cuerpoSnake[i - 1];
+    }
   }
   cuerpoSnake[0] = [snakeX, snakeY];
   snakeX += velocidadX;
@@ -61,9 +62,14 @@ const initGame = () => {
     } else {
       htmlMarkup += `<div class="cuerpoSerpiente" style="grid-area: ${cuerpoSnake[i][1]} / ${cuerpoSnake[i][0]}"></div>`;
     }
+    if (
+      i !== 0 &&
+      cuerpoSnake[0][1] === cuerpoSnake[i][1] &&
+      cuerpoSnake[0][0] === cuerpoSnake[i][0]
+    ) {
+      gameOver = true;
+    }
   }
-  // Utilizo += para agregar la serpiente sin sobreescribir la comida
-  htmlMarkup += `<div class="cuerpoSerpiente" style="grid-area: ${snakeY} / ${snakeX}"></div>`;
   tablero.innerHTML = htmlMarkup;
 };
 
