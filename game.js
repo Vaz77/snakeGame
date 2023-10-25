@@ -1,5 +1,6 @@
 const tablero = document.querySelector(".tablero");
 
+let gameOver = false;
 let comidaX = 13,
   comidaY = 10;
 let snakeX = 5,
@@ -7,10 +8,16 @@ let snakeX = 5,
 let velocidadX = 0,
   velocidadY = 0;
 let cuerpoSnake = [];
+let setIntervalId;
 
 const cambiarPosicionComida = () => {
   comidaX = Math.floor(Math.random() * 30) + 1;
   comidaY = Math.floor(Math.random() * 30) + 1;
+};
+
+const handleGameOver = () => {
+  clearInterval(setIntervalId);
+  alert("Has perdido!");
 };
 
 const cambioDireccion = (e) => {
@@ -32,6 +39,7 @@ const cambioDireccion = (e) => {
 };
 
 const initGame = () => {
+  if (gameOver) return handleGameOver();
   let htmlMarkup = `<div class="comida" style="grid-area: ${comidaY} / ${comidaX}"></div>`;
   for (let i = cuerpoSnake.length - 1; i > 0; i--) {
     cuerpoSnake[i] = cuerpoSnake[i - 1];
@@ -44,6 +52,9 @@ const initGame = () => {
   cuerpoSnake[0] = [snakeX, snakeY];
   snakeX += velocidadX;
   snakeY += velocidadY; // y = 10 - 1 = 9
+  if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
+    gameOver = true;
+  }
   for (let i = 0; i < cuerpoSnake.length; i++) {
     if (i === 0) {
       htmlMarkup += `<div class="cabeza" style="grid-area: ${cuerpoSnake[i][1]} / ${cuerpoSnake[i][0]}"></div>`;
