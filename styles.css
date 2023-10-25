@@ -47,3 +47,9 @@ body {
   display: grid;
   grid-template: repeat(30, 1fr) / repeat(30, 1fr);
 }
+
+.tablero .comida {
+  background-color: red;
+  width: 1.6em;
+  height: 1.6em;
+}
