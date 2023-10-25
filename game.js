@@ -1,4 +1,6 @@
 const tablero = document.querySelector(".tablero");
+const puntuacionElemento = document.querySelector(".puntuacion");
+const puntuacionMaxElemento = document.querySelector(".puntuacionMax");
 
 let gameOver = false;
 let comidaX = 13,
@@ -9,6 +11,9 @@ let velocidadX = 0,
   velocidadY = 0;
 let cuerpoSnake = [];
 let setIntervalId;
+let puntuacion = 0;
+let puntuacionMax = localStorage.getItem("puntuacionMax") || 0;
+puntuacionMaxElemento.innerHTML = `Puntuación Maxima: ${puntuacionMax}`;
 
 const cambiarPosicionComida = () => {
   comidaX = Math.floor(Math.random() * 30) + 1;
@@ -44,6 +49,11 @@ const initGame = () => {
   if (snakeX === comidaX && snakeY === comidaY) {
     cambiarPosicionComida();
     cuerpoSnake.push([comidaX, comidaY]);
+    puntuacion++;
+    puntuacionMax = puntuacion >= puntuacionMax ? puntuacion : puntuacionMax;
+    localStorage.setItem("puntuacionMax", puntuacionMax);
+    puntuacionElemento.innerHTML = `Puntuación: ${puntuacion}`;
+    puntuacionMaxElemento.innerHTML = `Puntuación Maxima: ${puntuacionMax}`;
   }
   if (cuerpoSnake.length > 0) {
     for (let i = cuerpoSnake.length - 1; i > 0; i--) {
