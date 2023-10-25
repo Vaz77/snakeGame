@@ -11,6 +11,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background: #282c34;
+  background-image: url(./img/fondoSnake.png);
   background-size: cover;
 }
 
@@ -49,16 +50,22 @@ body {
 }
 
 .tablero .comida {
-  background-color: red;
+  background-image: url(/img/manzana.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1.6em;
+  height: 1.6em;
 }
 .tablero .cabeza {
-  background-color: green;
+  background-image: url(/img/cabezaSerpiente2.png);
   background-size: cover;
   border-radius: 10px;
   height: 1.6em;
 }
 .tablero .cuerpoSerpiente {
-  background-color: greenyellow;
+  background: linear-gradient(to bottom, rgb(179, 137, 0), #337d3d);
+  border-radius: 10px;
+  width: 1.7em;
 }
 
 .mensaje {
@@ -72,4 +79,41 @@ body {
   border: 2px solid black;
   border-radius: 5px;
   text-align: center;
+}
+
+.mensaje p {
+  margin: 10px;
+  color: rgba(255, 0, 0, 0.756);
+  font-weight: bold;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.mensaje button {
+  color: chartreuse;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: linear-gradient(to right, black, rgb(0, 216, 0));
+  border-radius: 15px;
+  transition: transform 1s;
+  margin-top: 1em;
+}
+
+.mensaje button:hover {
+  color: rgb(74, 148, 0);
+  transform: scale(1.1);
+}
+
+#puntuacionFinal {
+  color: rgb(220, 220, 1);
+  font-size: 18px;
+}
+
+.puntuacion,
+.puntuacionMax {
+  font-family: "Press Start 2P", monospace;
+  font-size: 14px;
 }

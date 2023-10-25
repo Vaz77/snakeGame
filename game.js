@@ -26,7 +26,6 @@ const handleGameOver = () => {
   mensajeGameOver.style.display = "block";
   const puntuacionFinal = document.getElementById("puntuacionFinal");
   puntuacionFinal.innerHTML = `Tu puntuación: ${puntuacion}`;
-
   // Agrega un event listener para el botón de reinicio
   const reiniciarBtn = document.getElementById("reiniciarBtn");
   reiniciarBtn.addEventListener("click", reiniciarPartida);
@@ -45,7 +44,6 @@ const reiniciarPartida = () => {
   velocidadY = 0;
   snakeX = 5;
   snakeY = 10;
-
   // Comienza un nuevo juego
   setIntervalId = setInterval(initGame, 125);
 };
