@@ -32,8 +32,13 @@ const cambioDireccion = (e) => {
 
 const initGame = () => {
   let htmlMarkup = `<div class="comida" style="grid-area: ${comidaY} / ${comidaX}"></div>`;
+  // Comprueba si la cabeza de la serpiente coincide con la comida antes de actualizar el cuerpo.
+  if (snakeX === comidaX && snakeY === comidaY) {
+    cambiarPosicionComida();
+  }
   snakeX += velocidadX;
   snakeY += velocidadY; // y = 10 - 1 = 9
+
   // Utilizo += para agregar la serpiente sin sobreescribir la comida
   htmlMarkup += `<div class="cuerpoSerpiente" style="grid-area: ${snakeY} / ${snakeX}"></div>`;
 
