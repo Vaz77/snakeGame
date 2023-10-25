@@ -50,6 +50,8 @@ body {
 
 .tablero .comida {
   background-color: red;
-  width: 1.6em;
-  height: 1.6em;
+}
+
+.tablero .cuerpoSerpiente {
+  background-color: greenyellow;
 }
