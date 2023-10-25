@@ -1,6 +1,8 @@
 const tablero = document.querySelector(".tablero");
 const puntuacionElemento = document.querySelector(".puntuacion");
 const puntuacionMaxElemento = document.querySelector(".puntuacionMax");
+const gameOverAudio = document.getElementById("gameOverAudio");
+const comeAudio = document.getElementById("comeAudio");
 
 let gameOver = false;
 let comidaX = 13,
@@ -22,6 +24,7 @@ const cambiarPosicionComida = () => {
 
 const handleGameOver = () => {
   clearInterval(setIntervalId);
+  gameOverAudio.play();
   const mensajeGameOver = document.getElementById("mensaje");
   mensajeGameOver.style.display = "block";
   const puntuacionFinal = document.getElementById("puntuacionFinal");
@@ -72,6 +75,7 @@ const initGame = () => {
   if (snakeX === comidaX && snakeY === comidaY) {
     cambiarPosicionComida();
     cuerpoSnake.push([comidaX, comidaY]);
+    comeAudio.play();
     puntuacion++;
     puntuacionMax = puntuacion >= puntuacionMax ? puntuacion : puntuacionMax;
     localStorage.setItem("puntuacionMax", puntuacionMax);
