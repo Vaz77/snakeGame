@@ -122,10 +122,9 @@ body {
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
-  animation: fade-in 3.5s ease;
   width: 16em;
   height: 90vh;
-  margin-left: 7em;
+  margin-left: 12em;
   text-shadow: 2px 2px black;
 }
 .cajaInfo {
@@ -135,6 +134,7 @@ body {
   align-items: center;
   width: 14em;
   height: 14em;
+  animation: fade-in 1.5s ease;
 }
 
 @keyframes fade-in {
@@ -151,12 +151,31 @@ body {
 .textoCajaInfo {
   color: white;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 10px;
   text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.761);
+  /* background-color: rgba(0, 0, 0, 0.761); */
+  background-image: url(./img/entrepa1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 35em;
+  height: 24em;
   border-radius: 10px;
-  box-shadow: 3px 3px 3px rgb(255, 208, 0);
-  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  animation: fade-in 5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textoInfo{
+  font-size: 13px;
+  width: 20em;
+  height: 6.5em;
+  color: rgb(0, 163, 0);
+  text-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+.resaltado{
+  color: red;
 }
 
 @media screen and (max-width: 360px) {
