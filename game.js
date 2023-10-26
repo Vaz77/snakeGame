@@ -48,7 +48,7 @@ const reiniciarPartida = () => {
   snakeX = 5;
   snakeY = 10;
   // Comienza un nuevo juego
-  setIntervalId = setInterval(initGame, 125);
+  setIntervalId = setInterval(initGame, 150);
 };
 
 const cambioDireccion = (e) => {
@@ -111,5 +111,5 @@ const initGame = () => {
 };
 
 cambiarPosicionComida();
-setIntervalId = setInterval(initGame, 125);
+setIntervalId = setInterval(initGame, 150);
 document.addEventListener("keydown", cambioDireccion);

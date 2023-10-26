@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.generalIntro{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.tituloSnake{
+    color: white;
+    font-size: 130px;
+}
+
+.cajaImagenIntro{
+    background-image: url(/img/snakeIntro2.png);
+    background-size: cover;
+    width: 40em;
+    height: 40em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: fade-in 3s ease;
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+.botonInicio{
+    width: 8em;
+    height: 5em;
+    border: none;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+    cursor: pointer;
+    transition: transform 1s;
+    text-decoration: none;
+}
+
+.botonInicio:hover{
+    transform: scale(1.1);
+}
+
+.botonInfo{
+    width: 8em;
+    height: 5em;
+    border: none;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+    cursor: pointer;
+    transition: transform 1s;
+    text-decoration: none;
+}
+
+.botonInfo:hover{
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 360px){
+    .tituloSnake {
+        font-size: 50px; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+    }
+
+    .cajaImagenIntro {
+        width: 20em; /* Ajusta el tamaño de la imagen para pantallas más pequeñas */
+        height: 20em;
+    }
+
+    .botonInicio,
+    .botonInfo {
+        font-size: 4vw; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+    }
+}

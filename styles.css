@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Press Start 2P", monospace;
 }
 
 body {
@@ -59,7 +59,6 @@ body {
 .tablero .cabeza {
   background-image: url(/img/cabezaSerpiente2.png);
   background-size: cover;
-  border-radius: 10px;
   height: 1.6em;
 }
 .tablero .cuerpoSerpiente {
@@ -85,7 +84,7 @@ body {
   margin: 10px;
   color: rgba(255, 0, 0, 0.756);
   font-weight: bold;
-  font-size: 23px;
+  font-size: 12px;
   cursor: pointer;
 }
 
@@ -116,4 +115,76 @@ body {
 .puntuacionMax {
   font-family: "Press Start 2P", monospace;
   font-size: 14px;
+}
+
+.cajaGeneralInfo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  animation: fade-in 3.5s ease;
+  width: 16em;
+  height: 90vh;
+  margin-left: 7em;
+  text-shadow: 2px 2px black;
+}
+.cajaInfo {
+  background-image: url(/img/snakeIntro2.png);
+  background-size: cover;
+  justify-content: space-around;
+  align-items: center;
+  width: 14em;
+  height: 14em;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.textoCajaInfo {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.761);
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgb(255, 208, 0);
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 360px) {
+  .tablero {
+    width: 100%;
+    height: 85%;
+  }
+  .tablero .cabeza {
+    background-image: url(/img/cabezaSerpiente2.png); /* Cambia la imagen de la cabeza para dispositivos móviles */
+    width: 10px; /* Ajusta el ancho de la cabeza */
+    height: 10px; /* Ajusta la altura de la cabeza */
+  }
+
+  .tablero .cuerpoSerpiente {
+    background: linear-gradient(
+      to bottom,
+      rgb(179, 137, 0),
+      #337d3d
+    ); /* Cambia el fondo del cuerpo para dispositivos móviles */
+    width: 10px; /* Ajusta el ancho del cuerpo */
+  }
+
+  .tablero .comida {
+    width: 10px;
+    height: 10px;
+  }
+
+  .cajaGeneralInfo {
+    display: none;
+  }
 }
