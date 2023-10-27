@@ -14,6 +14,9 @@
     <div class="general">
       <div class="detallesJuego">
         <div class="puntuacion">Puntuación: 0</div>
+        <div class="contadorComida">
+          Tiempo: <span id="contadorComida">10</span>
+        </div>
         <div class="puntuacionMax">Máxima puntuación: 30</div>
       </div>
       <div class="tablero"></div>
@@ -25,11 +28,14 @@
     </div>
     <div class="cajaGeneralInfo">
       <a class="textoCajaInfo" href="">
-        <p class="textoInfo"><span class="resaltado">¡Hola!</span> Si necesitas instrucciones haz <span class="resaltado">click aquí!</span> Además hay info sobre el <span class="resaltado">desarrollador</span>!</p>
+        <p class="textoInfo">
+          <span class="resaltado">¡Hola!</span> Si necesitas instrucciones haz
+          <span class="resaltado">click aquí!</span> Además hay info sobre el
+          <span class="resaltado">desarrollador</span>!
+        </p>
       </a>
-    <div class="cajaInfo"></div>
-
-  </div>
+      <div class="cajaInfo"></div>
+    </div>
     <audio id="gameOverAudio" preload="auto" src="/audio/gameOver.mp3"></audio>
     <audio id="comeAudio" preload="auto" src="/audio/come.mp3"></audio>
     <script src="/game.js"></script>

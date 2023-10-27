@@ -16,6 +16,17 @@ let setIntervalId;
 let puntuacion = 0;
 let puntuacionMax = localStorage.getItem("puntuacionMax") || 0;
 puntuacionMaxElemento.innerHTML = `Puntuación Maxima: ${puntuacionMax}`;
+let contadorComida = 10;
+let contadorComidaIntervalId;
+
+const reducirContadorComida = () => {
+  contadorComida--;
+  document.getElementById("contadorComida").textContent = contadorComida;
+  if (contadorComida === 0) {
+    handleGameOver();
+    clearInterval(contadorComidaIntervalId)
+  }
+};
 
 const cambiarPosicionComida = () => {
   comidaX = Math.floor(Math.random() * 30) + 1;
@@ -29,9 +40,9 @@ const handleGameOver = () => {
   mensajeGameOver.style.display = "block";
   const puntuacionFinal = document.getElementById("puntuacionFinal");
   puntuacionFinal.innerHTML = `Tu puntuación: ${puntuacion}`;
-  // Agrega un event listener para el botón de reinicio
   const reiniciarBtn = document.getElementById("reiniciarBtn");
   reiniciarBtn.addEventListener("click", reiniciarPartida);
+  clearInterval(contadorComidaIntervalId);
 };
 
 const reiniciarPartida = () => {
@@ -47,10 +58,11 @@ const reiniciarPartida = () => {
   velocidadY = 0;
   snakeX = 5;
   snakeY = 10;
+  contadorComida = 10;
   // Comienza un nuevo juego
   setIntervalId = setInterval(initGame, 150);
+  clearInterval(contadorComidaIntervalId);
 };
-
 const cambioDireccion = (e) => {
   console.log(e);
   if (e.key === "ArrowUp" && velocidadY != 1) {
@@ -67,7 +79,6 @@ const cambioDireccion = (e) => {
     velocidadY = 0;
   }
 };
-
 const initGame = () => {
   if (gameOver) return handleGameOver();
   let htmlMarkup = `<div class="comida" style="grid-area: ${comidaY} / ${comidaX}"></div>`;
@@ -81,6 +92,12 @@ const initGame = () => {
     localStorage.setItem("puntuacionMax", puntuacionMax);
     puntuacionElemento.innerHTML = `Puntuación: ${puntuacion}`;
     puntuacionMaxElemento.innerHTML = `Puntuación Maxima: ${puntuacionMax}`;
+    // Inicia el contador de comida cuando la serpiente come
+    contadorComida = 10;
+    document.getElementById("contadorComida").textContent = contadorComida;
+    // Detiene y reinicia el contador de comida
+    clearInterval(contadorComidaIntervalId);
+    contadorComidaIntervalId = setInterval(reducirContadorComida, 1000);
   }
   if (cuerpoSnake.length > 0) {
     for (let i = cuerpoSnake.length - 1; i > 0; i--) {
@@ -90,7 +107,13 @@ const initGame = () => {
   cuerpoSnake[0] = [snakeX, snakeY];
   snakeX += velocidadX;
   snakeY += velocidadY; // y = 10 - 1 = 9
-  if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
+  if (
+    snakeX <= 0 ||
+    snakeX > 30 ||
+    snakeY <= 0 ||
+    snakeY > 30 ||
+    contadorComida === 0
+  ) {
     gameOver = true;
   }
   for (let i = 0; i < cuerpoSnake.length; i++) {

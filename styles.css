@@ -153,7 +153,6 @@ body {
   font-weight: bold;
   font-size: 10px;
   text-decoration: none;
-  /* background-color: rgba(0, 0, 0, 0.761); */
   background-image: url(./img/entrepa1.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -178,31 +177,32 @@ body {
   color: red;
 }
 
+#contadorComida{
+  color: red;
+}
+
 @media screen and (max-width: 360px) {
   .tablero {
     width: 100%;
     height: 85%;
   }
   .tablero .cabeza {
-    background-image: url(/img/cabezaSerpiente2.png); /* Cambia la imagen de la cabeza para dispositivos móviles */
-    width: 10px; /* Ajusta el ancho de la cabeza */
-    height: 10px; /* Ajusta la altura de la cabeza */
+    background-image: url(/img/cabezaSerpiente2.png);
+    width: 10px;
+    height: 10px;
   }
-
   .tablero .cuerpoSerpiente {
     background: linear-gradient(
       to bottom,
       rgb(179, 137, 0),
       #337d3d
-    ); /* Cambia el fondo del cuerpo para dispositivos móviles */
-    width: 10px; /* Ajusta el ancho del cuerpo */
+    );
+    width: 10px;
   }
-
   .tablero .comida {
     width: 10px;
     height: 10px;
   }
-
   .cajaGeneralInfo {
     display: none;
   }
