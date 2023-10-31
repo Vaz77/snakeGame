@@ -39,8 +39,6 @@
 
 A continuación, algunas capturas de pantalla del juego:
 
-![Snake Game]()
-
-## Instalación
-
-Para jugar al Snake, sigue estos pasos:
+![Snake Game](/img/intro.png)
+![Snake Game](/img/juegoAvanzado.png)
+![Snake Game](/img/gameOver.png)

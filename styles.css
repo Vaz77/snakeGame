@@ -165,7 +165,7 @@ body {
   align-items: center;
 }
 
-.textoInfo{
+.textoInfo {
   font-size: 13px;
   width: 20em;
   height: 6.5em;
@@ -173,11 +173,11 @@ body {
   text-shadow: 2px 2px 2px rgb(255, 255, 255);
 }
 
-.resaltado{
+.resaltado {
   color: red;
 }
 
-#contadorComida{
+#contadorComida {
   color: red;
 }
 
@@ -192,11 +192,7 @@ body {
     height: 10px;
   }
   .tablero .cuerpoSerpiente {
-    background: linear-gradient(
-      to bottom,
-      rgb(179, 137, 0),
-      #337d3d
-    );
+    background: linear-gradient(to bottom, rgb(179, 137, 0), #337d3d);
     width: 10px;
   }
   .tablero .comida {
@@ -205,5 +201,19 @@ body {
   }
   .cajaGeneralInfo {
     display: none;
+  }
+
+  .contadorComida {
+    font-size: 10.5px;
+  }
+
+  .puntuacionMax {
+    font-size: 10.5px;
+  }
+  .puntuacion {
+    font-size: 10.5px;
+  }
+  .mensaje {
+    width: auto;
   }
 }

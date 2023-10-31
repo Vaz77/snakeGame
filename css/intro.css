@@ -36,7 +36,6 @@
     100% { opacity: 1; transform: scale(1); }
 }
 
-
 .botonInicio{
     width: 8em;
     height: 5em;
@@ -77,12 +76,10 @@
     .tituloSnake {
         font-size: 50px; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
     }
-
     .cajaImagenIntro {
         width: 20em; /* Ajusta el tamaño de la imagen para pantallas más pequeñas */
         height: 20em;
     }
-
     .botonInicio,
     .botonInfo {
         font-size: 4vw; /* Ajusta el tamaño de fuente para pantallas más pequeñas */

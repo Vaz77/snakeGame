@@ -1,0 +1,54 @@
+.generalInfo {
+  background-image: url(/img/fondoSnake.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow: hidden;
+  color: whitesmoke;
+  font-family: "Press Start 2P", monospace;
+  text-align: center;
+}
+
+.parrafoInstrucciones {
+  color: white;
+  border: solid 2px white;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.693);
+  margin-bottom: 10px;
+}
+
+.img-fluid {
+  width: 10em;
+  height: auto;
+}
+
+.iconoVolver {
+  width: 5em;
+  box-shadow: 2px white;
+}
+
+.infoDev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.736);
+}
+
+.imgInstrucciones {
+  width: 60em;
+  height: 30em;
+}
+
+@media (max-width: 768px) {
+  .tituloInfo {
+    font-size: 24px;
+  }
+  .infoDev h2 {
+    font-size: 24px;
+  }
+  .parrafoInstrucciones {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+}

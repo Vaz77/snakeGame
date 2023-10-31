@@ -24,15 +24,13 @@ const reducirContadorComida = () => {
   document.getElementById("contadorComida").textContent = contadorComida;
   if (contadorComida === 0) {
     handleGameOver();
-    clearInterval(contadorComidaIntervalId)
+    clearInterval(contadorComidaIntervalId);
   }
 };
-
 const cambiarPosicionComida = () => {
   comidaX = Math.floor(Math.random() * 30) + 1;
   comidaY = Math.floor(Math.random() * 30) + 1;
 };
-
 const handleGameOver = () => {
   clearInterval(setIntervalId);
   gameOverAudio.play();
@@ -44,7 +42,6 @@ const handleGameOver = () => {
   reiniciarBtn.addEventListener("click", reiniciarPartida);
   clearInterval(contadorComidaIntervalId);
 };
-
 const reiniciarPartida = () => {
   // Restablece todas las variables del juego y oculta el mensaje de Game Over
   gameOver = false;
